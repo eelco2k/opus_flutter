@@ -14,7 +14,12 @@ dependencies:
   opus_flutter_android: ^3.0.1
   opus_flutter_ios:
     path: ../opus_flutter_ios
-  opus_flutter_windows: ^3.0.0
+  opus_flutter_macos:
+    git:
+      url: https://github.com/qyinter/opus_flutter.git
+      path: opus_flutter_macos
+  opus_flutter_windows:
+    path: ../opus_flutter_windows
   opus_flutter_web: ^3.0.3
 
 flutter:
@@ -24,6 +29,8 @@ flutter:
         default_package: opus_flutter_android
       ios:
         default_package: opus_flutter_ios
+      macos:
+        default_package: opus_flutter_macos
       windows:
         default_package: opus_flutter_windows
       web:
