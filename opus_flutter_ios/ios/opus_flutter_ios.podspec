@@ -19,6 +19,13 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'opus.xcframework'
   
   # Flutter.framework does not contain a i386 slice.
-  s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
+  s.pod_target_xcconfig = { 
+    'DEFINES_MODULE' => 'YES', 
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386',
+    'OTHER_LDFLAGS' => '-all_load'
+  }
+  s.user_target_xcconfig = {
+    'OTHER_LDFLAGS' => '-all_load'
+  }
   s.swift_version = '5.1'
 end

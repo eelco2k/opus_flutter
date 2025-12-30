@@ -19,7 +19,11 @@ Pod::Spec.new do |s|
   s.vendored_frameworks = 'Frameworks/opus.framework'
   
   s.pod_target_xcconfig = { 
-    'DEFINES_MODULE' => 'YES'
+    'DEFINES_MODULE' => 'YES',
+    'OTHER_LDFLAGS' => '-all_load'
+  }
+  s.user_target_xcconfig = {
+    'OTHER_LDFLAGS' => '-all_load'
   }
   s.swift_version = '5.1'
 end
